@@ -108,7 +108,7 @@ graph TB
     end
     
     subgraph "Adapter Layer"
-        Middleware[@jwt-waf/express-adapter]
+        Middleware["@jwt-waf/express-adapter"]
     end
     
     subgraph "Core Layer"
@@ -181,13 +181,13 @@ sequenceDiagram
 ```mermaid
 graph LR
     subgraph "프레임워크 독립"
-        Core[@jwt-waf/core<br/>순수 비즈니스 로직]
+        Core["@jwt-waf/core"]
     end
     
     subgraph "프레임워크 어댑터"
-        Express[@jwt-waf/express-adapter]
-        Fastify[@jwt-waf/fastify-adapter<br/>확장 가능]
-        Nest[@jwt-waf/nestjs-adapter<br/>확장 가능]
+        Express["@jwt-waf/express-adapter"]
+        Fastify["@jwt-waf/fastify-adapter"]
+        Nest["@jwt-waf/nestjs-adapter"]
     end
     
     Express --> Core
@@ -207,9 +207,9 @@ graph LR
 ```mermaid
 graph TD
     subgraph "점수 범위"
-        A[0-30점] --> Allow[✅ ALLOW<br/>정상 요청]
-        B[31-79점] --> Observe[⚠️ OBSERVE<br/>의심 활동 로그]
-        C[80-100점] --> Block[🚫 BLOCK<br/>차단]
+        A[0-30점] --> Allow[✅ ALLOW정상 요청]
+        B[31-79점] --> Observe[⚠️ OBSERVE의심 활동 로그]
+        C[80-100점] --> Block[🚫 BLOCK차단]
     end
     
     style Allow fill:#90EE90
@@ -259,10 +259,10 @@ graph LR
 graph TD
     WAF[WAF Engine] --> Multi[MultiNotifier]
     
-    Multi --> Slack[Slack<br/>Webhook]
-    Multi --> Telegram[Telegram<br/>Bot API]
-    Multi --> Kakao[카카오워크<br/>Webhook]
-    Multi --> Custom[커스텀<br/>Notifier]
+    Multi --> Slack[SlackWebhook]
+    Multi --> Telegram[TelegramBot API]
+    Multi --> Kakao[카카오워크Webhook]
+    Multi --> Custom[커스텀Notifier]
     
     style WAF fill:#667eea
     style Multi fill:#f093fb

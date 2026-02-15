@@ -8,10 +8,10 @@ JWT WAF의 실시간 알림 시스템을 설정하고 사용하는 방법을 설
 graph TB
     WAF[WAF Engine] --> Multi[MultiNotifier]
     
-    Multi --> Slack[Slack<br/>Incoming Webhook]
-    Multi --> Telegram[Telegram<br/>Bot API]
-    Multi --> Kakao[카카오워크<br/>Webhook]
-    Multi --> Custom[커스텀<br/>Notifier]
+    Multi --> Slack[SlackIncoming Webhook]
+    Multi --> Telegram[TelegramBot API]
+    Multi --> Kakao[카카오워크Webhook]
+    Multi --> Custom[커스텀Notifier]
     
     style WAF fill:#667eea
     style Multi fill:#f093fb
@@ -263,7 +263,7 @@ sequenceDiagram
     Telegram--xMulti: ❌ Failed
     Kakao-->>Multi: ✅ Success
     
-    Note over Multi: 2/3 성공<br/>계속 진행
+    Note over Multi: 2/3 성공계속 진행
     Multi-->>WAF: Done
 ```
 

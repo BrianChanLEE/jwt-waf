@@ -7,15 +7,15 @@ JWT WAF의 6개 보안 규칙을 상세히 설명합니다.
 ```mermaid
 graph TB
     subgraph "공격 탐지 규칙"
-        A[Expired Token Flood<br/>30점]
-        B[Invalid Signature Spike<br/>40점]
-        C[Multi-IP Token Use<br/>45점]
-        D[Token Replay Detection<br/>25점]
+        A[Expired Token Flood30점]
+        B[Invalid Signature Spike40점]
+        C[Multi-IP Token Use45점]
+        D[Token Replay Detection25점]
     end
     
     subgraph "남용 탐지 규칙"
-        E[Refresh Endpoint Abuse<br/>35점]
-        F[Privilege Endpoint Weighting<br/>20점]
+        E[Refresh Endpoint Abuse35점]
+        F[Privilege Endpoint Weighting20점]
     end
     
     style A fill:#FFB6C1
@@ -31,9 +31,9 @@ graph TB
 ```mermaid
 graph LR
     A[총 점수] --> B{점수 범위}
-    B -->|0-30| C[✅ ALLOW<br/>정상 요청]
-    B -->|31-79| D[⚠️ OBSERVE<br/>의심 활동]
-    B -->|80-100| E[🚫 BLOCK<br/>차단]
+    B -->|0-30| C[✅ ALLOW정상 요청]
+    B -->|31-79| D[⚠️ OBSERVE의심 활동]
+    B -->|80-100| E[🚫 BLOCK차단]
     
     style C fill:#90EE90
     style D fill:#FFD700
@@ -131,11 +131,11 @@ wafConfig: {
 **시나리오**:
 ```mermaid
 graph TB
-    A[Stolen Token<br/>jti: abc123] --> B[IP: 1.2.3.4]
+    A[Stolen Tokenjti: abc123] --> B[IP: 1.2.3.4]
     A --> C[IP: 5.6.7.8]
     A --> D[IP: 9.10.11.12]
     
-    B --> E[🚨 3개 IP 탐지!<br/>Score: 45]
+    B --> E[🚨 3개 IP 탐지!Score: 45]
     C --> E
     D --> E
     
@@ -197,7 +197,7 @@ new TokenReplayDetectionRule()
 ```mermaid
 graph LR
     A[Attacker] -->|refresh x20| B[/api/auth/refresh]
-    B --> C[🚨 Abuse 탐지!<br/>Score: 35]
+    B --> C[🚨 Abuse 탐지!Score: 35]
     
     style C fill:#FFD700
 ```

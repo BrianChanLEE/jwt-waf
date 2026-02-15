@@ -28,51 +28,40 @@ graph TB
     subgraph "모노레포"
         Root[jwt-waf/]
     end
+        Core["packages/core"]
+        Adapter["packages/express-adapter"]
+        Example["examples/express-basic"]
+    end
     
-    Root --> Packages[packages/]
-    Root --> Examples[examples/]
-    Root --> Docs[docs/]
-    
-    Packages --> Core[core/<br/>WAF 엔진]
-    Packages --> Express[express-adapter/<br/>Express 미들웨어]
-    
-    Examples --> BasicExample[express-basic/<br/>기본 예제]
-    
-    Docs --> QuickStart[QUICK_START.md]
-    Docs --> Architecture[ARCHITECTURE.md]
-    Docs --> Rules[RULES.md]
+    Adapter --> Core
+    Example --> Core
+    Example --> Adapter
     
     style Core fill:#4CAF50
-    style Express fill:#2196F3
-    style BasicExample fill:#FFC107
+    style Adapter fill:#2196F3
+    style Example fill:#FFC107
 ```
 
-### 계층 구조
+## 계층 구조
 
 ```mermaid
 graph LR
     subgraph "Core Layer"
-        Types[types/<br/>타입 정의]
-        Engine[engine/<br/>WAF 엔진]
-        Rules[rules/<br/>보안 규칙]
-        Store[store/<br/>저장소]
-        Notifiers[observability/<br/>알림]
+        Types[types/]
+        Engine[engine/]
+        Rules[rules/]
+        Store[store/]
+        Obs[observability/]
     end
     
     subgraph "Adapter Layer"
-        Express[express-adapter/<br/>Express 통합]
+        ExpressAdapter["Express Adapter"]
     end
     
-    Engine --> Types
-    Rules --> Types
-    Express --> Engine
+    ExpressAdapter --> Engine
     
-    style Types fill:#E3F2FD
-    style Engine fill:#C8E6C9
-    style Rules fill:#FFF9C4
-    style Store fill:#E0F2F1
-    style Notifiers fill:#FFEBEE
-    style Express fill:#FFF3E0
+    style Core fill:#E8F5E9
+    style ExpressAdapter fill:#FFF3E0
 ```
 
 ## 기여 방법
