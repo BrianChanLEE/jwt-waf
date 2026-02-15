@@ -196,8 +196,8 @@ new TokenReplayDetectionRule()
 **시나리오**:
 ```mermaid
 graph LR
-    A[Attacker] -->|refresh x20| B[/api/auth/refresh]
-    B --> C[🚨 Abuse 탐지!Score: 35]
+    A[Attacker] -->|refresh x20| B["/api/auth/refresh"]
+    B --> C["🚨 Abuse 탐지! Score: 35"]
     
     style C fill:#FFD700
 ```

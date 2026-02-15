@@ -26,8 +26,6 @@ npm test
 ```mermaid
 graph TB
     subgraph "모노레포"
-        Root[jwt-waf/]
-    end
         Core["packages/core"]
         Adapter["packages/express-adapter"]
         Example["examples/express-basic"]
