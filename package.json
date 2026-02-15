@@ -1,0 +1,20 @@
+{
+  "name": "jwt-waf",
+  "version": "0.1.0",
+  "description": "JWT WAF 모노레포",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "clean": "npm run clean --workspaces",
+    "test": "node packages/core/dist/rules/__tests__/rules.test.js",
+    "security:scan": "bash scripts/security-scan.sh",
+    "security:audit": "npm audit --audit-level=moderate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

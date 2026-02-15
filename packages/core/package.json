@@ -1,0 +1,51 @@
+{
+    "name": "@jwt-waf/core",
+    "version": "0.1.0",
+    "description": "JWT 공격 탐지 특화 WAF for Node.js - Core Engine",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "clean": "rm -rf dist",
+        "test": "node dist/rules/__tests__/rules.test.js",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "jwt",
+        "waf",
+        "security",
+        "firewall",
+        "attack-detection",
+        "nodejs",
+        "typescript",
+        "middleware",
+        "jwt-security",
+        "rate-limiting"
+    ],
+    "author": "JWT WAF Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BrianChanLEE/jwt-waf.git",
+        "directory": "packages/core"
+    },
+    "bugs": {
+        "url": "https://github.com/BrianChanLEE/jwt-waf/issues"
+    },
+    "homepage": "https://github.com/BrianChanLEE/jwt-waf#readme",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "axios": "^1.13.5"
+    }
+}

@@ -1,0 +1,39 @@
+# 의존성
+node_modules/
+package-lock.json
+yarn.lock
+
+# 빌드 결과물
+dist/
+build/
+*.js
+*.d.ts
+*.map
+
+# 로그
+*.log
+logs/
+
+# 환경 변수
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 테스트 커버리지
+coverage/
+.nyc_output/
+
+# 임시 파일
+tmp/
+temp/

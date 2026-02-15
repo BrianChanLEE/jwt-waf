@@ -1,0 +1,38 @@
+# Test files
+*.test.ts
+*.test.js
+__tests__/
+*.spec.ts
+*.spec.js
+
+# Source files (배포는 빌드된 파일만)
+*.ts
+!*.d.ts
+
+# Examples
+examples/
+
+# Documentation source
+docs/
+
+# Development files
+.github/
+tsconfig.json
+tsconfig.*.json
+.eslintrc.js
+.prettierrc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Other
+.DS_Store
+.env
+.env.local
